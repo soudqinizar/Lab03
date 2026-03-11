@@ -1,13 +1,17 @@
 class Dictionary:
     def __init__(self):
-        pass
+        self._dict = list()
 
     def loadDictionary(self,path):
-        pass
+        # dict is a string with the filename of the dictionary
+        f = open(path, 'r', encoding="utf8").readlines()
+        for riga in f:
+            campi = riga.strip()
+            self._dict.append(campi)
 
     def printAll(self):
-        pass
-
+        for riga in self._dict:
+            print(riga)
 
     @property
     def dict(self):
